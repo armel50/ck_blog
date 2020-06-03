@@ -9,12 +9,14 @@ import {createStore} from 'redux'
 
 import ShowScreen from "./src/screens/ShowScreen";
 import EditScreen from "./src/screens/EditScreen";
+import NewScreen from "./src/screens/NewScreen";
 
 
 const navigator = createStackNavigator({
 IndexScreen: IndexScreen,
 ShowScreen: ShowScreen,
-EditScreen: EditScreen
+EditScreen: EditScreen,
+NewScreen: NewScreen
 },{
   initialRouteParams: "IndexScreen",
   defaultNavigationOptions:{

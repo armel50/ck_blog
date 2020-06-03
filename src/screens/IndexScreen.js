@@ -1,15 +1,16 @@
 import {View, Text, Button,FlatList, TouchableOpacity, TextInput} from 'react-native'
-
+import {connect} from 'react-redux'
 
 import React, { Component } from 'react'
 
-export default class IndexScreen extends Component {
+ class IndexScreen extends Component {
     render() {
         
         return (
+            
         
             <View>
-                {console.log(this.props)}
+                {console.log(this.props.posts)}
                 <Text>Welcome to CK Blog</Text>
                 <TextInput 
                     placeholder="Enter Title"
@@ -26,10 +27,12 @@ export default class IndexScreen extends Component {
                                                     </TouchableOpacity>
                                                 </View>)}
                 /> */}
-                <Button title="Show Item" onPress={() => this.props.navigation.navigate('ShowScreen')}/>
+                <Button title="Add Blog" onPress={() => this.props.navigation.navigate('NewScreen')}/>
             </View>
         )
     }
 }
 
 
+const mapStateToProps = state => ({posts: state})
+export default connect(mapStateToProps,null)(IndexScreen)
